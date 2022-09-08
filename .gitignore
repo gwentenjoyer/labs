@@ -1,6 +1,9 @@
 .gitignore
-/lab*/lab*/*
-!lab*.cpp
+/lab*/lab*/x*
+/lab*/lab*/*proj*
+#!lab*.cpp
+#!*.cpp
+#!/lab*/lab*/lab*.cpp
 .vs
 /lab*/x*
 /**/*.sln
