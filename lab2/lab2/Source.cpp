@@ -13,14 +13,11 @@ Furniture::Furniture(char* room, int weight) {
 }
 Furniture::Furniture(const Furniture& src) {
     cout << "Parametrized furniture constructor (link)" << endl;
-    //int srcRoomLen = strlen(src.getRoom());
-    //this->room = new char[strlen(src.getRoom())];
     setRoom(src.getRoom());
     setWeight(src.getWeight());
 }
 Furniture::~Furniture() {
     cout << "Furniture dectructor" << endl;
-    //if (room != nullptr) {
     if (room) {
         delete room;
     }
@@ -29,7 +26,6 @@ Furniture::~Furniture() {
 void Furniture::setRoom(char* room) {
     int roomLen = strlen(room) + 1;
     this->room = new char[roomLen];
-    //strcpy_s(this->room, room);
     strcpy_s(this->room, roomLen, room);
 }
 
@@ -46,7 +42,6 @@ int Furniture::getWeight() const {
 }
 
 void Furniture::input() {
-    //char* nroom;
     char nroom[N];
     int nweight;
     cout << "Enter room: ";
@@ -63,12 +58,12 @@ void Furniture::print() const {
 
 
 
-//List::List(const Furniture& newData, List* oldList = nullptr) {
-//    //cout << "List parametrized constructor" << endl;
-//    data.setRoom(newData.getRoom());
-//    data.setWeight(newData.getWeight());
-//    next = oldList;
-//}
+List::List(const Furniture& newData, List* oldList) {
+    cout << "List parametrized constructor" << endl;
+    data.setRoom(newData.getRoom());
+    data.setWeight(newData.getWeight());
+    next = oldList;
+}
 List::~List() {
     cout << "List destructor" << endl;
     if (next) {

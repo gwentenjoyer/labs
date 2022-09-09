@@ -25,13 +25,7 @@ private:
     List* next;
     Furniture data;
 public:
-    //List(const Furniture&, List* );
-    List(const Furniture& newData, List* oldList = nullptr) {
-        //cout << "List parametrized constructor" << endl;
-        data.setRoom(newData.getRoom());
-        data.setWeight(newData.getWeight());
-        next = oldList;
-    }
+    List(const Furniture& newData, List* oldList = nullptr);
     ~List();
     void printList();
 };
