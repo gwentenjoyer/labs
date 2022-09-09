@@ -11,20 +11,15 @@ public:
         this->sec = 0;
     }
     Time(int hour, int min = 0, int sec = 0) {
-        int i = 0;
         this->hour = 0;
         this->min = 0;
         this->sec = 0;
+        
+        this->sec = sec % 60;
+        this->min += sec / 60;
 
-        for (i = sec; i >= 60; i -= 60) {
-            this->min++;
-        }
-        this->sec = i;
-
-        for (i = min; i >= 60; i -= 60) {
-            this->hour++;
-        }
-        this->min += i;
+        this->min += min % 60;
+        this->hour += min / 60;
 
         this->hour += hour;
     }
@@ -39,7 +34,7 @@ public:
 
 int main()
 {
-    Time time0, time1(11, 12), time2(23, 59, 22);
+    Time time0, time1(11, 12, 55), time2(23, 59, 22);
     time0.showTime();
     time1.showTime();
     time2.showTime();
