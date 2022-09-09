@@ -1,4 +1,5 @@
-#include "Header.h"
+#include "Furniture.h"
+#include "Common.h"
 using namespace std;
 
 Furniture::Furniture() {
@@ -54,24 +55,4 @@ void Furniture::input() {
 
 void Furniture::print() const {
     cout << "The furniture for room \"" << getRoom() << "\" has weight " << getWeight() << endl;
-}
-
-
-
-List::List(const Furniture& newData, List* oldList) {
-    cout << "List parametrized constructor" << endl;
-    data.setRoom(newData.getRoom());
-    data.setWeight(newData.getWeight());
-    next = oldList;
-}
-List::~List() {
-    cout << "List destructor" << endl;
-    if (next) {
-        delete next;
-    }
-}
-void List::printList() {
-    data.print();
-    if (next)
-        next->printList();
 }
