@@ -1,7 +1,7 @@
 #include "Furniture.h"
 //#include <iostream>
 #include <cassert>
-#define N 16
+#define N 32
 using namespace std;
 
 Furniture::Furniture() {
@@ -27,6 +27,8 @@ Furniture::~Furniture() {
 }
 
 void Furniture::setRoom(char* room) {
+    if (this->room)
+        delete[] this->room;
     int roomLen = strlen(room) + 1;
     this->room = new char[roomLen];
     strcpy_s(this->room, roomLen, room);
@@ -63,6 +65,7 @@ void Furniture::print() const {
 
 istream& operator >> (istream& is, Furniture& furn ){
     char c, buff[N];
+
     is >> furn.weight;
     cin >> c;
     assert(c == '_');
