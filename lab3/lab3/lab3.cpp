@@ -22,12 +22,14 @@ int main()
 {
 	/*cout << sizeof(long long) << "\t" << sizeof(long) << endl;
 	cout << LLONG_MAX << "\t" << LONG_MAX << endl;*/
+	 //task 1
 	Integer32 x(LONG_MIN), y, z(20);
 	y = x + z;
 	cout << y.getData() << endl;
 	Integer32 f = x / z;
 	cout << f.getData() << endl;
 
+	// task 2
 	char buff[N];
 	strcpy_s(buff, N, "kitchen");
 	Furniture furn1(buff, 42), furn2;
@@ -36,6 +38,7 @@ int main()
 	cin >> furn2;
 	cout << furn2 << endl;
 
+	// task 3
 	Int one;
 	one.setSys(8);
 	one.setNum(2524);

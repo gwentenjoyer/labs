@@ -23,5 +23,5 @@ public:
 	~Int();
 	Int& operator = (const Int&);
 	friend std::istream& operator >> (std::istream&, Int& );
-	friend std::ostream& operator <<(std::ostream&, const Int&);
+	friend std::ostream& operator << (std::ostream&, const Int&);
 };
