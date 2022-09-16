@@ -35,7 +35,9 @@ char* Int::convDecToNumSys(int n, int numSys)	//
 
 	int i = 0;
 	if (!(numSys == 2 || numSys == 8 || numSys == 10 || numSys == 16)) {
-		return nullptr;														// returns NULL if wrong numerical system
+		cout << "wrong numerical system" << endl;
+		exit(2);
+		//return nullptr;														// returns NULL if wrong numerical system
 	}
 	while (n != 0) {
 		int temp = 0;
@@ -144,7 +146,7 @@ Int& Int::operator = (const Int& obj) {
 		delete[] this->number;
 	}
 	if (!obj.number)
-		this->number = nullptr;
+		this->number = nullptr;							// it would crash if read char* with nullptr
 	else {
 		int numLen = strlen(obj.number) + 1;
 		this->number = new char[numLen];
