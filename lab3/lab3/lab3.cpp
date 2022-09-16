@@ -48,6 +48,9 @@ int main()
 	//cout << sizeof(long long) << "\t" << sizeof(long) << endl;
 	cout << "Enter number in format: numerical_system:decimal_number" << endl;
 	cin >> one;
-	cout << one;
+	cout << one << endl;
+	Int four;
+	three = four = three;
+	cout << one << endl << two << endl << three << endl << four << endl;
 	return 0;
 }

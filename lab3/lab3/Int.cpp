@@ -137,3 +137,18 @@ ostream& operator <<(ostream& out, const Int& obj) {
 }
 
 
+Int& Int::operator = (const Int& obj) {
+	//Int tmp;
+	this->numSys = obj.numSys;
+	if (this->number) {
+		delete[] this->number;
+	}
+	if (!obj.number)
+		this->number = nullptr;
+	else {
+		int numLen = strlen(obj.number) + 1;
+		this->number = new char[numLen];
+		strcpy_s(this->number, numLen, obj.number);
+	}
+	return *this;
+}
