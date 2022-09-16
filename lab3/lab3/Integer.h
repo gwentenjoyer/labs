@@ -12,7 +12,7 @@ public:
 	int getData() const;
 	void annul();
 	Integer32 operator +(const Integer32& y) const;
-	Integer32 operator -(const Integer32& y);
-	Integer32 operator *(const Integer32& y);
-	Integer32 operator /(const Integer32& y);
+	Integer32 operator -(const Integer32& y) const;
+	Integer32 operator *(const Integer32& y) const;
+	Integer32 operator /(const Integer32& y) const;
 };

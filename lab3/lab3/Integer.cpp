@@ -37,14 +37,18 @@ Integer32 Integer32::operator +(const Integer32& y) const {
 	return Integer32(res);
 }
 
-Integer32 Integer32::operator -(const Integer32& y) {
+Integer32 Integer32::operator -(const Integer32& y) const {
 	return Integer32(this->data - y.data);
 }
 
-Integer32 Integer32::operator *(const Integer32& y) {
+Integer32 Integer32::operator *(const Integer32& y) const {
 	return Integer32(this->data * y.data);
 }
 
-Integer32 Integer32::operator /(const Integer32& y) {
+Integer32 Integer32::operator /(const Integer32& y) const {
+	if (!y.data) {
+		cout << "Error: division by zero" << endl;
+		exit(1);
+	}
 	return Integer32(this->data / y.data);
 }
