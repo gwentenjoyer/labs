@@ -1,6 +1,9 @@
 .gitignore
-/lab*/lab*/x*
-/lab*/lab*/*proj*
+#/lab*/lab*/x*
+x64
+#/lab*/lab*/*proj*
+*proj*
 .vs
 /lab*/x*
-/**/*.sln
+#/**/*.sln
+*.sln
