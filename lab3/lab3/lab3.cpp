@@ -34,7 +34,7 @@ int main()
 	strcpy_s(buff, N, "kitchen");
 	Furniture furn1(buff, 42), furn2;
 	cout << furn1 << endl;
-	cout << "enter values in forman: weight_room" << endl;
+	cout << "enter values in forman: [weight]_[room]" << endl;
 	cin >> furn2;
 	cout << furn2 << endl;
 
@@ -49,7 +49,7 @@ int main()
 	Int three(255, 16);
 	cout << one << endl << two << endl << three << endl;
 	//cout << sizeof(long long) << "\t" << sizeof(long) << endl;
-	cout << "Enter number in format: numerical_system:decimal_number" << endl;
+	cout << "Enter number in format: [numerical_system]:[decimal_number]" << endl;
 	cin >> one;
 	cout << one << endl;
 	Int four;

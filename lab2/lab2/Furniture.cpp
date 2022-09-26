@@ -20,11 +20,14 @@ Furniture::Furniture(const Furniture& src) {
 Furniture::~Furniture() {
     cout << "Furniture dectructor" << endl;
     if (room) {
-        delete room;
+        delete[] room;
     }
 }
 
 void Furniture::setRoom(char* room) {
+    if (this->room) {
+        delete[] this->room;
+    }
     int roomLen = strlen(room) + 1;
     this->room = new char[roomLen];
     strcpy_s(this->room, roomLen, room);
