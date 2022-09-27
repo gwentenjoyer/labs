@@ -19,11 +19,11 @@ void Book::setData() {
 	setPages(tmppages);
 }
 
-Book Book::getData() const {
+void Book::getData() const {
 	std::cout << "Name is \"" << this->getName() << "\"" << std::endl;
 	std::cout << "Price is " << this->getPrice() << std::endl;
 	std::cout << "Price is " << getPages() << std::endl;
-	return *this;
+	//return *this;
 }
 
 int Book::getPages() const {

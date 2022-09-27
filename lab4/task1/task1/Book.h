@@ -10,6 +10,6 @@ public:
 	//Book(const Book&);
 	void setPages(int);
 	int getPages() const;
-	Book getData() const;
+	void getData() const;
 	void setData();
 };

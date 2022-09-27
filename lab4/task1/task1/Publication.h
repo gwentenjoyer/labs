@@ -13,5 +13,5 @@ public:
 	char* getName() const;
 	int getPrice() const;
 	void setData();
-	Publication getData();
+	void getData();
 };

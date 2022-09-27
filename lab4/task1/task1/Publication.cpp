@@ -38,19 +38,19 @@ int Publication::getPrice() const {
 }
 
 void Publication::setData() {
-	std::cout << "Enter name of book: ";
+	std::cout << "Enter name of the publication: ";
 	char tmpname[64];
 	int tmpprice;
 	std::cin.getline(tmpname, 64);
 	setName(tmpname);
-	
+	//std::cin.ignore();
 	std::cout << "Enter price: ";
 	std::cin >> tmpprice;
 	setPrice(tmpprice);
 }
 
-Publication Publication::getData() {
+void Publication::getData() {
 	std::cout << "Name is \"" << this->getName() << "\"" << std::endl;
 	std::cout << "Price is " << this->getPrice() << std::endl;
-	return *this;
+	//return *this;
 }
