@@ -6,8 +6,10 @@ private:
 	int pages;
 public:
 	Book();
-	Book(char*, int, int);
-	Book(const Book&);
+	//Book(char*, int, int);
+	//Book(const Book&);
 	void setPages(int);
-	int getPages();
+	int getPages() const;
+	Book getData() const;
+	void setData();
 };

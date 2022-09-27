@@ -37,16 +37,13 @@ int Publication::getPrice() const {
 	return this->price;
 }
 
-void Publication::setData(char* name, int price) {
-	if (this->name) {
-		delete[] this->name;
-	}
+void Publication::setData() {
 	std::cout << "Enter name of book: ";
 	char tmpname[64];
-	int len, tmpprice;
+	int tmpprice;
 	std::cin.getline(tmpname, 64);
-	len = strlen(tmpname) + 1;
-	this->name = new char[len];
+	setName(tmpname);
+	
 	std::cout << "Enter price: ";
 	std::cin >> tmpprice;
 	setPrice(tmpprice);
