@@ -1,20 +1,56 @@
-﻿// task2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿#include <iostream>
+#include <conio.h>
+#include "Publication.h"
+#include "Book.h"
+#include "Tape.h"
 
-#include <iostream>
+#define N 2
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    /*Book b;
+    b.setData();
+    b.getData();
+    Tape t;
+    cin.ignore();
+    t.setData();
+    t.getData();*/
+    short guess;
+    Publication* arr[4];
+
+    for (int i = 0; i < N; i++) {
+        do {
+            cout << "Create publication Book (1), Tape (2): ";
+            cin >> guess;
+            cin.ignore();
+            //_getch(guess);
+            switch (guess) {
+            case 1:
+                cout << "You chose Book" << endl;
+                arr[i] = new Book();
+                arr[i]->setData();
+                break;
+            case 2:
+                cout << "You chose Tape" << endl;
+                arr[i] = new Tape();
+                arr[i]->setData();
+                break;
+            default:
+                cout << "Wrong category. Try again" << endl;
+
+                break;
+            }
+        } while (guess != 1 && guess != 2);
+    }
+
+    for (int i = 0; i < N; i++) {
+        arr[i]->getData();
+        if (arr[i]->isOversize()) {
+            cout << "Oversized!" << endl;
+        }
+    }
+
+    return 0;
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
