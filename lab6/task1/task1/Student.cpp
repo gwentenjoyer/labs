@@ -33,17 +33,6 @@ void Student::setSurname(string surn) {
 }
 Student::Student(string surname, string name, string fname = "", int grade_num = 0, bool sfe)
     : surname(surname), name(name), fname(fname), gradebook_num(grade_num), SFE(sfe) {}
-//void Student::out() const {
-//    cout << this->surname << ", " << this->name << ", " << this->fname << ", "
-//        << this->gradebook_num << ", ";
-//    if (this->SFE) {
-//        cout << "YES";
-//    }
-//    else {
-//        cout << "NO";
-//    }
-//    cout << endl;
-//}
 
 istream& operator >> (istream is, Student& st) {
     cout << "Surname: ";

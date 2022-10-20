@@ -6,14 +6,19 @@ Grupa::Grupa() : groupName(""), specialty(""), studCopacity(0), stud(nullptr) {}
 Grupa::Grupa(string grName, string specialty, int capacity, Student* st)
     : groupName(grName), specialty(specialty), studCopacity(capacity), stud(st) {}
 Grupa::~Grupa() {
-    /*if (!stud) {
-        delete[] stud;
-    }*/
 }
-void Grupa::out() const {
-    cout << "Group name: " << this->groupName << endl
-        << "Group specialty: " << this->specialty << endl
-        << "Students in group: " << this->studCopacity << endl;
+
+//Grupa::Grupa(const Grupa& gr) {
+//    this->groupName = gr.groupName;
+//    this->specialty = gr.specialty;
+//    this->studCopacity = this->studCopacity;
+//    if (gr.stud) {
+//        this->stud = new Student()
+//    }
+//}
+
+void Grupa::showStudent(int id) {
+    cout << this->stud[id];
 }
 
 std::ostream& operator << (std::ostream& os, const Grupa& gr) {
