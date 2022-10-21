@@ -95,33 +95,66 @@ public:
     T* getArr() const {
         return this->arr;
     }
+    
+    void printArray() const {
+        int i;
+        for (i = 0; i < this->capacity - 1; i++) {
+            cout << this->arr[i] << ", ";
+        }
+        cout << this->arr[i];
+        cout << endl;
+    }
 
 };
 
 int main()
 {
-    int len = 4;
+    /****************** task 1 /******************/
+
     int ai[] = {4, 5, 6, 2};
     long al[] = { 10, 20, 30, 40 };
     double ad[] = { 32.2, 35.7, 22.3 };
     char ch[] = { 'a', 'b', 'c' }; // 97 98 99
-    cout << average(ai, sizeof(ai) / sizeof(int)) << endl;
-    cout << average(al, sizeof(al) / sizeof(long)) << endl;
-    cout << average(ad, sizeof(ad) / sizeof(double)) << endl;
-    cout << average(ch, sizeof(ch) / sizeof(char)) << endl;
+    cout << "Average of array is " << average(ai, sizeof(ai) / sizeof(int)) << endl;
+    cout << "Average of array is " << average(al, sizeof(al) / sizeof(long)) << endl;
+    cout << "Average of array is " << average(ad, sizeof(ad) / sizeof(double)) << endl;
+    cout << "Average of array is " << average(ch, sizeof(ch) / sizeof(char)) << endl;
+
+    /****************** task 1 /******************/
 
 
-    Nums<int> arr(len, ai);
-    //cout << amax(arr.getArr(), len) << endl;
-    cout << endl << amax(ai, sizeof(ai) / sizeof(int)) << endl;
-    cout << amax(al, sizeof(al) / sizeof(long)) << endl;
-    cout << amax(ad, sizeof(ad) / sizeof(double)) << endl;
-    cout << amax(ch, sizeof(ch) / sizeof(char)) << endl;
+    /****************** task 2 /******************/
+
+    cout << endl << "MAX value of array is " << amax(ai, sizeof(ai) / sizeof(int)) << endl;
+    cout << "MAX value of array is " << amax(al, sizeof(al) / sizeof(long)) << endl;
+    cout << "MAX value of array is " << amax(ad, sizeof(ad) / sizeof(double)) << endl;
+    cout << "MAX value of array is " << amax(ch, sizeof(ch) / sizeof(char)) << endl;
+
+    /****************** task 2 /******************/
+
+
+    /****************** task 3 /******************/
+
+    cout << endl;
+
+    int lenArrInt = sizeof(ai) / sizeof(int);
+    int lenArrchar = sizeof(ch) / sizeof(char);
+
+    Nums<int> arrInt(lenArrInt, ai);
+    Nums<char> arrChar(lenArrchar, ch);
 
     /*cout << average(a, 3) << endl;
     cout << amax(a, 3) << endl;*/
     //cout << average(ch, 3) << endl;
-    cout << average(arr.getArr(), len) << endl;
-    //cout << amax(arr.getArr(), len) << endl;
+    arrInt.printArray();
+    cout << average(arrInt.getArr(), lenArrInt) << endl;
+    cout << amax(arrInt.getArr(), lenArrInt) << endl << endl;
+
+    arrChar.printArray();
+    cout << (char)average(arrChar.getArr(), lenArrchar) << endl;
+    cout << amax(arrChar.getArr(), lenArrchar) << endl;
+
+    /****************** task 3 /******************/
+
     return 0;
 }
