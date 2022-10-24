@@ -53,7 +53,6 @@ public:
         if (this->arr) {
             delete[] this->arr;
         }
-        //this->arr = array;
         for (int i = 0; i < len; i++) {
             this->arr[i] = array[i];
         }
@@ -143,9 +142,6 @@ int main()
     Nums<int> arrInt(lenArrInt, ai);
     Nums<char> arrChar(lenArrchar, ch);
 
-    /*cout << average(a, 3) << endl;
-    cout << amax(a, 3) << endl;*/
-    //cout << average(ch, 3) << endl;
     arrInt.printArray();
     cout << average(arrInt.getArr(), lenArrInt) << endl;
     cout << amax(arrInt.getArr(), lenArrInt) << endl << endl;
