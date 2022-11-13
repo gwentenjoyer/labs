@@ -1,5 +1,5 @@
 ﻿#include <iostream> // Для потокового введення-виведення
-#include <cstring> // Для роботи з рядковими типами даних
+#include <string> // Для роботи з рядковими типами даних
 #include "windows.h"
 
 using namespace std;
@@ -9,13 +9,17 @@ const int LIMIT = 100; //array size
 
 class Exceptions {
 public:
-	Exceptions() : error(0) {}
-	Exceptions(string s) : error(s) {}
+	Exceptions() : error(0), errorIndex(0) {}
+	Exceptions(string s, int index = 0) : error(s), errorIndex(index) {}
 	string getError() const {
-		return this->error;
+		if (!errorIndex)
+			return this->error;
+		else
+			return this->error + " (" +to_string(this->errorIndex) + ")";
 	}
 private:
 	string error;
+	int errorIndex;
 };
 
 class safearay
@@ -28,7 +32,7 @@ public:
 		if (n < 0 || n >= LIMIT)
 		{
 			//cout << "\nIndex out of bounds";
-			throw Exceptions("Index out of bounds");
+			throw Exceptions("Index out of bounds", n);
 		}
 		return arr[n];
 	}
